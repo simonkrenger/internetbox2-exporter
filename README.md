@@ -4,7 +4,7 @@ A Prometheus exporter to read metrics from a Swisscom Internet-Box 2 router.
 
 Under the hood, the device is an [Askey RTV1905VW](https://deviwiki.com/wiki/Askey_RTV1905VW) (SG2-NP-00) with a custom interface.
 
-## Running the exporter
+## Running the exporter
 
 ```
 $ podman run --rm -d -p 8088:8088 -e INTERNETBOX_ADMIN_PASSWORD="secret" quay.io/simonkrenger/internetbox2-exporter:latest
