@@ -34,21 +34,21 @@ type WifiDriverStatsResponse struct {
 				ChipState          string `json:"ChipState"`
 			} `json:"Parameters"`
 			ChanimStats struct {
-				Chanspec  int `json:"chanspec"`
-				Tx        int `json:"tx"`
-				Inbss     int `json:"inbss"`
-				Obss      int `json:"obss"`
-				Nocat     int `json:"nocat"`
-				Nopkt     int `json:"nopkt"`
-				Doze      int `json:"doze"`
-				Txop      int `json:"txop"`
-				Goodtx    int `json:"goodtx"`
-				Badtx     int `json:"badtx"`
-				Glitch    int `json:"glitch"`
-				Badplcp   int `json:"badplcp"`
-				Knoise    int `json:"knoise"`
-				Idle      int `json:"idle"`
-				Timestamp int `json:"timestamp"`
+				Chanspec  string `json:"chanspec"`
+				Tx        int    `json:"tx"`
+				Inbss     int    `json:"inbss"`
+				Obss      int    `json:"obss"`
+				Nocat     int    `json:"nocat"`
+				Nopkt     int    `json:"nopkt"`
+				Doze      int    `json:"doze"`
+				Txop      int    `json:"txop"`
+				Goodtx    int    `json:"goodtx"`
+				Badtx     int    `json:"badtx"`
+				Glitch    int    `json:"glitch"`
+				Badplcp   int    `json:"badplcp"`
+				Knoise    int    `json:"knoise"`
+				Idle      int    `json:"idle"`
+				Timestamp int    `json:"timestamp"`
 			} `json:"ChanimStats"`
 			RssiPerAnt []struct {
 				Value   string `json:"Value"`
@@ -76,21 +76,21 @@ type WifiDriverStatsResponse struct {
 				ChipState          string `json:"ChipState"`
 			} `json:"Parameters"`
 			ChanimStats struct {
-				Chanspec  int `json:"chanspec"`
-				Tx        int `json:"tx"`
-				Inbss     int `json:"inbss"`
-				Obss      int `json:"obss"`
-				Nocat     int `json:"nocat"`
-				Nopkt     int `json:"nopkt"`
-				Doze      int `json:"doze"`
-				Txop      int `json:"txop"`
-				Goodtx    int `json:"goodtx"`
-				Badtx     int `json:"badtx"`
-				Glitch    int `json:"glitch"`
-				Badplcp   int `json:"badplcp"`
-				Knoise    int `json:"knoise"`
-				Idle      int `json:"idle"`
-				Timestamp int `json:"timestamp"`
+				Chanspec  string `json:"chanspec"`
+				Tx        int    `json:"tx"`
+				Inbss     int    `json:"inbss"`
+				Obss      int    `json:"obss"`
+				Nocat     int    `json:"nocat"`
+				Nopkt     int    `json:"nopkt"`
+				Doze      int    `json:"doze"`
+				Txop      int    `json:"txop"`
+				Goodtx    int    `json:"goodtx"`
+				Badtx     int    `json:"badtx"`
+				Glitch    int    `json:"glitch"`
+				Badplcp   int    `json:"badplcp"`
+				Knoise    int    `json:"knoise"`
+				Idle      int    `json:"idle"`
+				Timestamp int    `json:"timestamp"`
 			} `json:"ChanimStats"`
 			RssiPerAnt []struct {
 				Value   string `json:"Value"`
