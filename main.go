@@ -8,7 +8,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -108,9 +107,9 @@ func recordMetrics() {
 			for _, d := range lanDevices.Status {
 				if d.Active {
 					noOfActiveDevices++
-					if !strings.Contains(d.Layer2Interface, "ETH") {
-						// Ethernet connected devices do not have an Event log entry (no bandwidth information for example)
-						// Skip them
+					switch d.Layer2Interface {
+					case "WL1":
+
 						events, _ := ws.GetEventLogForDevice(d.PhysAddress)
 						if err != nil {
 							log.Println(err)
@@ -124,6 +123,10 @@ func recordMetrics() {
 						ibClientTxBytes.With(prometheus.Labels{"station": d.PhysAddress, "ip": d.IPAddress, "interface": d.InterfaceName}).Set(float64(events.Status[lastEvent].TxBytes))
 						ibClientSignalStrength.With(prometheus.Labels{"station": d.PhysAddress, "ip": d.IPAddress, "interface": d.InterfaceName}).Set(float64(events.Status[lastEvent].SignalStrength))
 						ibClientNoise.With(prometheus.Labels{"station": d.PhysAddress, "ip": d.IPAddress, "interface": d.InterfaceName}).Set(float64(events.Status[lastEvent].Noise))
+					case "eth1.0":
+						log.Println("Layer 2 type for " + d.PhysAddress + " is 'eth1.0', does not have any bandwidth information. Skipping.")
+					default:
+						log.Println("Unknown layer 2 type for " + d.PhysAddress + ", skipping: " + d.Layer2Interface)
 					}
 				}
 			}
