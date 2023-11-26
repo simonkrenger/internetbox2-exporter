@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-minimal:37 as build
+FROM registry.fedoraproject.org/fedora-minimal:39 as build
 
 WORKDIR /usr/lib/golang/src/internetbox2-exporter
 # Not ideal as it also copies all the git objects, but it is only the build container   
